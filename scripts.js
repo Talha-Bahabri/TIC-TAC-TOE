@@ -13,9 +13,12 @@ const player = (name, mark) => {
 
 
   const gameBoard = (() => {
-      const sayPlayersName = (player1 , player2) => console.log(`player1 is ${player1.name} and player2 is ${player2.name} hehe`)
+      const sayPlayersName = (player1 , player2) => console.log(`....kplayer1 is ${player1.name} and player2 is ${player2.name} hehe`)
       return { sayPlayersName };
     })();
   
     gameBoard.sayPlayersName(player1,player2);
   
+
+
+    
