@@ -1,4 +1,4 @@
-const slot = (() => {
+const slot = (() => { 
   const slot0 = document.getElementById('0-slot');
   const slot1 = document.getElementById('1-slot');
   const slot2 = document.getElementById('2-slot');
@@ -44,29 +44,30 @@ const player = (name, mark) => {
   
 
 
-
-    slotsArray[0].addEventListener("click" , function(e) {
-      changeTheSlot(0);
-  }); 
-    slotsArray[1].addEventListener("click" , function(e) {
-      changeTheSlot(1);
-  }); 
-    // slotsArray[2].addEventListener("click" , changeTheSlot(2) ); 
-    // slotsArray[3].addEventListener("click" , changeTheSlot(3) ); 
-    // slotsArray[4].addEventListener("click" , changeTheSlot(4) ); 
-    // slotsArray[5].addEventListener("click" , changeTheSlot(5) ); 
-    // slotsArray[6].addEventListener("click" , changeTheSlot(6) ); 
-    // slotsArray[7].addEventListener("click" , changeTheSlot(7) ); 
-    // slotsArray[8].addEventListener("click" , changeTheSlot(8) ); 
-
-function changeTheSlot(number) {
-    console.log(`inside changeTheSlot`);
-  slotsArray[number].textContent = `${turn}`; 
-  if (turn ===`X`) {
-    turn = `O`
+    
+    //this loop is all the event listener ( instead of making 8 , make 1 loop)
+  for (let i = 0 ; i<=8 ; i++) { 
+    slotsArray[i].addEventListener("click" , function(e) {
+      changeTheSlot(i);
+  });
   }
-  if (turn === `O`) {
-    turn = `X`
+
+
+  function changeTheSlot(number) { 
+
+    if (slotsArray[number].textContent !== `X` && slotsArray[number].textContent !== `O`) {
+      slotsArray[number].textContent = `${turn}`; 
+    //this one will change the player
+    if (turn ==`X`) {
+      turn = `O`
+    }
+    else {
+      turn = `X`
+    }
+    } 
+    //this else is when you press again in on already clicked box
+    else {
+    console.log(`wonrg, Already taken`) 
+    }
   }
- 
-}
+  
