@@ -19,7 +19,7 @@ const slot = (() => {
 
 
 let slotsArray = [slot.slot0, slot.slot1, slot.slot2, slot.slot3, slot.slot4, slot.slot5, slot.slot6, slot.slot7, slot.slot8]
-let turn = `X`
+
 
 //this one is the class
 const player = (name, mark) => {
@@ -27,16 +27,15 @@ const player = (name, mark) => {
     return { name, mark, sayHello  };
   };
   //those are the objects, players
-  const player1 = player('Human', `x`);
-  const player2 = player(`bot`, `o`); 
+  const player1 = player('Human', `X`);
+  const player2 = player(`bot`, `O`); 
   player1.sayHello();  
   player2.sayHello(); 
 
 
-
   const gameBoard = (() => {
       const sayPlayersName = (player1 , player2) => console.log(` player1 is ${player1.name} and player2 is ${player2.name} hehe`)
-      const playerMove = (player , location) => console.log(`this will set the location wiht the player marker`)
+      //const playerMove = (player , location) => console.log(`this will set the location wiht the player marker`)
       return { sayPlayersName };
     })();
   
@@ -53,16 +52,18 @@ const player = (name, mark) => {
   }
 
 
+  let turn = `${player1.mark}`
+
   function changeTheSlot(number) { 
 
     if (slotsArray[number].textContent !== `X` && slotsArray[number].textContent !== `O`) {
       slotsArray[number].textContent = `${turn}`; 
     //this one will change the player
-    if (turn ==`X`) {
-      turn = `O`
+    if (turn ==`${player1.mark}`) {
+      turn = `${player2.mark}`
     }
     else {
-      turn = `X`
+      turn = `${player1.mark}`
     }
     } 
     //this else is when you press again in on already clicked box
@@ -71,3 +72,4 @@ const player = (name, mark) => {
     }
   }
   
+
