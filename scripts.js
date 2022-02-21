@@ -35,7 +35,6 @@ const player = (name, mark) => {
 
   const gameBoard = (() => {
       const sayPlayersName = (player1 , player2) => console.log(` player1 is ${player1.name} and player2 is ${player2.name} hehe`)
-      //const playerMove = (player , location) => console.log(`this will set the location wiht the player marker`)
       return { sayPlayersName };
     })();
   
