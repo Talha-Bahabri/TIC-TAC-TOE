@@ -35,24 +35,12 @@ const player = (name, mark) => {
 
   const gameBoard = (() => {
       const sayPlayersName = (player1 , player2) => console.log(` player1 is ${player1.name} and player2 is ${player2.name} hehe`)
-      return { sayPlayersName };
-    })();
-  
-    gameBoard.sayPlayersName(player1,player2);
-  
-
-
-    
-    //this loop is all the event listener ( instead of making 8 , make 1 loop)
-  for (let i = 0 ; i<=8 ; i++) { 
+     //this loop is all the event listener ( instead of making 8 , make 1 loop)
+    for (let i = 0 ; i<=8 ; i++) { 
     slotsArray[i].addEventListener("click" , function(e) {
       changeTheSlot(i);
-  });
+    });
   }
-
-
-  let turn = `${player1.mark}`
-
   function changeTheSlot(number) { 
 
     if (slotsArray[number].textContent !== `X` && slotsArray[number].textContent !== `O`) {
@@ -70,5 +58,17 @@ const player = (name, mark) => {
     console.log(`wonrg, Already taken`) 
     }
   }
+      return { sayPlayersName };
+    })();
   
+//@@@@@@@@@@@@@@@@@@@@@ end of gameBoard   
 
+    gameBoard.sayPlayersName(player1,player2);
+  
+let turn = `${player1.mark}`
+
+ 
+
+function winCondition(){
+  
+}
