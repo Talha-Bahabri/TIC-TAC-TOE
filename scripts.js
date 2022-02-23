@@ -36,10 +36,10 @@ const player = (name, mark) => {
   const gameBoard = (() => {
       const sayPlayersName = (player1 , player2) => console.log(` player1 is ${player1.name} and player2 is ${player2.name} hehe`)
      //this loop is all the event listener ( instead of making 8 , make 1 loop)
-      
-    for (let i = 0 ; i<=8 ; i++) { 
-    slotsArray[i].addEventListener("click" , function(e) {
        
+    for (let i = 0 ; i<=8 ; i++) {  
+    slotsArray[i].addEventListener("click" , function(e) {
+
       winCondition()
 
       changeTheSlot(i);
@@ -107,9 +107,36 @@ function winCondition(){
   if (slotsArray[2].textContent === `X` && slotsArray[4].textContent === `X` && slotsArray[6].textContent === `X` ) {
     console.log(`${player1.name} wins`)
   }
-  
-  
+   
 
+
+
+  //Side pattern For O
+  if (slotsArray[0].textContent === `O` && slotsArray[1].textContent === `O` && slotsArray[2].textContent === `O` ) {
+    console.log(`${player2.name} wins`)
+  }
+  if (slotsArray[3].textContent === `O` && slotsArray[4].textContent === `O` && slotsArray[5].textContent === `O` ) {
+    console.log(`${player2.name} wins`)
+  }
+  if (slotsArray[6].textContent === `O` && slotsArray[7].textContent === `O` && slotsArray[8].textContent === `O` ) {
+    console.log(`${player2.name} wins`)
+  }
+// win by horizontal O
+  if (slotsArray[0].textContent === `O` && slotsArray[3].textContent === `O` && slotsArray[6].textContent === `O` ) {
+    console.log(`${player2.name} wins hhh`)
+  }
+  if (slotsArray[1].textContent === `O` && slotsArray[4].textContent === `O` && slotsArray[7].textContent === `O` ) {
+    console.log(`${player2.name} wins hhh`)
+  }
+  if (slotsArray[2].textContent === `O` && slotsArray[5].textContent === `O` && slotsArray[8].textContent === `O` ) {
+    console.log(`${player2.name} wins hhh`)
+  }
+// win by O cross
+  if (slotsArray[0].textContent === `O` && slotsArray[4].textContent === `O` && slotsArray[8].textContent === `O` ) {
+    console.log(`${player2.name} wins cross`)
+  }
+  if (slotsArray[2].textContent === `O` && slotsArray[4].textContent === `O` && slotsArray[6].textContent === `O` ) {
+    console.log(`${player2.name} wins`)
+  }
   
 }
-winCondition()
