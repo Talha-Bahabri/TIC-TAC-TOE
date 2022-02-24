@@ -23,11 +23,14 @@
       display: flex;
       /* justify-content: center; */
       background-color: #1f2937; 
-      
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       font-size: 29px;
+      color: rgba(240, 255, 255, 0.753);
       padding: 25px;
       width: 100%;
     }
+
+     
 
     .gameBoard {
       margin: 5rem;
@@ -39,10 +42,14 @@
       background-color: rgb(48, 48, 48);
       width: 100%;
     }
-
+    .headerImage {
+      padding: 20px;
+      padding-top: 30px;
+      width: 75x;
+      height: 75px;
+    }
     .footerImage {
       width: 50px;
       height: 50px;
-  
-  
   }
+
