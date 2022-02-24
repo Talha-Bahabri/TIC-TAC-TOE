@@ -21,8 +21,11 @@
 
     .header {  
       display: flex;
-      justify-content: center;
+      /* justify-content: center; */
       background-color: #1f2937; 
+      
+      font-size: 29px;
+      padding: 25px;
       width: 100%;
     }
 
