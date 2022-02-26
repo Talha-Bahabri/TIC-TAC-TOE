@@ -91,6 +91,7 @@ let turn = `${player1.mark}`
     turnPlayed = 0 ;
   
     for ( let i = 0 ; i<8 ; i++) {
+      slotsArray[i].classList.add(``)
       slotsArray[i].classList.remove(`mark`)
       slotsArray[i].textContent = ` `;
     }
