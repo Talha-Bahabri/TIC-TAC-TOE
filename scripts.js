@@ -49,10 +49,7 @@ const player = (name, mark) => {
 
       function invalidMove() {
         console.log(`Invalid move`)
-        document.getElementById("overlay").style.display = "block"
-         
-        
-
+        document.getElementById("overlay").style.display = "block"  
       }
       
     let turnPlayed = 0;
