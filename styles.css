@@ -49,6 +49,8 @@
       border-radius: 50px;
       color: #F9FAF8;
 
+
+
   }
 
 
@@ -103,4 +105,16 @@
     to { opacity: 0%;} 
     from { font-size: 80px;}
     to { font-size: 70px;}  
+  }
+
+  @keyframes retryItemsDisappear {
+    from { opacity: 100%;}
+    to { opacity: 0%;} 
+    from { font-size: 80px;}
+    to { font-size: 70px;}  
+  }
+
+  .retryItemsDisappear { 
+    animation-name: playersMarksPlacement;
+    animation-duration: 0.3s;
   }
