@@ -34,6 +34,8 @@ const player = (name, mark) => {
 
 
   const gameBoard = (() => {
+    
+let turn = `${player1.mark}`
       const sayPlayersName = (player1 , player2) => console.log(` player1 is ${player1.name} and player2 is ${player2.name} hehe`)
      //this loop is all the event listener ( instead of making 8 , make 1 loop)
         if (winCondition() === `No winner yet`) {
@@ -44,17 +46,11 @@ const player = (name, mark) => {
           changeTheSlot(i);
         });
        }
-       
-      }
-
-      function invalidMove() {
-        console.log(`Invalid move`)
-        document.getElementById("overlay").style.display = "block"  
       }
       
-    let turnPlayed = 0;
+    
   function changeTheSlot(number) {  
-
+    let turnPlayed = 0;
     if (winCondition() !== `No winner yet`) {
       
       return 0;
@@ -81,18 +77,35 @@ const player = (name, mark) => {
       invalidMove()
        
     }
-  }
+  } 
+  function invalidMove() {
+    console.log(`Invalid move`)
+    document.getElementById("overlay").style.display = "block"
+    // const invalidTextOverlay = document.getElementById("overlay").style.display;
+    // invalidTextOverlay.style.display =  "block"
+  } 
 
   
+  function retry() {
+    console.log(`retry is pressed`)
+    turnPlayed = 0 ;
+  
+    for ( let i = 0 ; i<8 ; i++) {
+      slotsArray[i].classList.remove(`mark`)
+      slotsArray[i].textContent = ` `;
+    }
+    turn = `${player1.mark}`
 
-      return { sayPlayersName };
+  } 
+  const retryButton = document.getElementById("retry-button");
+  retryButton.addEventListener("click" , retry) ;
+
+      return { sayPlayersName  };
     })();
   
 //@@@@@@@@@@@@@@@@@@@@@ end of gameBoard   
 
     gameBoard.sayPlayersName(player1,player2);
-  
-let turn = `${player1.mark}`
  
 
 function winCondition(){    
@@ -175,3 +188,5 @@ function winCondition(){
  return `No winner yet` ;
   
 }
+
+

@@ -35,6 +35,23 @@
     .gameBoard {
       margin: 5rem;
     }
+
+    #retry-button{
+      margin: 10%;
+      margin-left: 34%;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background-color: rgba(117, 177, 255, 0.712);
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 50px;
+      color: #F9FAF8;
+
+  }
+
+
     .footer {
       display: flex;
       justify-content: center;
@@ -74,11 +91,12 @@
   #overlay { 
     display: none; 
     position: fixed; /* Sit on top of the page content */ 
-    z-index: 2;
+    z-index: 2; 
     animation-name: invalidText;
     animation-duration: 0.9s; 
 
   } 
+ 
 
   @keyframes invalidText {
     from { opacity: 100%;}
