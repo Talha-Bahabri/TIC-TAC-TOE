@@ -61,6 +61,8 @@ const player = (name, mark) => {
     turnPlayed ++ ;
 
     if (slotsArray[number].textContent !== `X` && slotsArray[number].textContent !== `O`) {
+      
+      slotsArray[number].classList.add(`mark`)
       slotsArray[number].textContent = `${turn}`; 
 
     //this one will change the player
@@ -89,7 +91,7 @@ const player = (name, mark) => {
 let turn = `${player1.mark}`
  
 
-function winCondition(){ 
+function winCondition(){    
 
   //Side pattern For X
   if (slotsArray[0].textContent === `X` && slotsArray[1].textContent === `X` && slotsArray[2].textContent === `X` ) {
