@@ -47,7 +47,13 @@ const player = (name, mark) => {
        
       }
 
+      function invalidMove() {
+        console.log(`Invalid move`)
+        document.getElementById("overlay").style.display = "block"
+         
+        
 
+      }
       
     let turnPlayed = 0;
   function changeTheSlot(number) {  
@@ -75,7 +81,8 @@ const player = (name, mark) => {
     } 
     //this else is when you press again in on already clicked box
     else {
-    console.log(`wonrg, Already taken`) 
+      invalidMove()
+       
     }
   }
 
