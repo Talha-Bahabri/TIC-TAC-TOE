@@ -79,10 +79,13 @@ let turn = `${player1.mark}`
     }
   } 
   function invalidMove() {
+    //this one is to show the animtion of " invalid move "
     console.log(`Invalid move`)
-    document.getElementById("overlay").style.display = "block"
-    // const invalidTextOverlay = document.getElementById("overlay").style.display;
-    // invalidTextOverlay.style.display =  "block"
+    const invalidTextParagraph = document.getElementById("overlay");
+    invalidTextParagraph.style.display = "block" 
+    invalidTextParagraph.addEventListener(`animationend`, function (e) {
+      document.getElementById("overlay").style.display = "none"
+    }) 
   } 
 
   
@@ -90,8 +93,8 @@ let turn = `${player1.mark}`
     console.log(`retry is pressed`)
     turnPlayed = 0 ;
   
-    for ( let i = 0 ; i<8 ; i++) {
-      slotsArray[i].classList.add(``)
+    for ( let i = 0 ; i<9 ; i++) {
+      // slotsArray[i].classList.add(``)
       slotsArray[i].classList.remove(`mark`)
       slotsArray[i].textContent = ` `;
     }
