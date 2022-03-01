@@ -74,8 +74,7 @@ let turn = `${player1.mark}`
     } 
     //this else is when you press again in on already clicked box
     else {
-      invalidMove()
-       
+      invalidMove()  
     }
   } 
   function invalidMove() {
@@ -94,7 +93,6 @@ let turn = `${player1.mark}`
     turnPlayed = 0 ;
   
     for ( let i = 0 ; i<9 ; i++) {
-      // slotsArray[i].classList.add(``)
       slotsArray[i].classList.remove(`mark`)
       slotsArray[i].textContent = ` `;
     }
@@ -107,7 +105,7 @@ let turn = `${player1.mark}`
       return { sayPlayersName  };
     })();
   
-//@@@@@@@@@@@@@@@@@@@@@ end of gameBoard   
+// end of gameBoard   
 
     gameBoard.sayPlayersName(player1,player2);
  
